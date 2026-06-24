@@ -2,9 +2,6 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import ProjetoPlanetas as pp
-# ==========================
-# CONFIGURAÇÃO DA PÁGINA
-# ==========================
 
 st.set_page_config(
     page_title="Exoplanet Explorer",
@@ -12,9 +9,6 @@ st.set_page_config(
     layout="wide"
 )
 
-# ==========================
-# CSS INSPIRADO NO HTML
-# ==========================
 
 st.markdown("""
 <style>
@@ -87,15 +81,10 @@ div[data-testid="stImage"]{
 </style>
 """, unsafe_allow_html=True)
 
-# ==========================
-# IMPORTA ANÁLISE
-# ==========================
 
 import ProjetoPlanetas as pp
 
-# ==========================
-# CABEÇALHO
-# ==========================
+
 
 st.markdown(
     """
@@ -110,9 +99,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# ==========================
-# MÉTRICAS PRINCIPAIS
-# ==========================
+
 
 col1, col2, col3, col4 = st.columns(4)
 
@@ -142,11 +129,8 @@ with col4:
 
 st.divider()
 
-# ==========================
-# PLANETA VENCEDOR
-# ==========================
 
-#vencedor = pp.gemeo_estrutural.iloc[0]
+vencedor = pp.gemeo_estrutural.iloc[0]
 
 if not pp.planetas_perfeitos.empty:
     vencedor = pp.planetas_perfeitos.iloc[0]
@@ -190,15 +174,16 @@ with col1:
         f"Raio da Terra",
         f"{pp.RAIO_DA_TERRA} R⊕"
     )
+    
     st.metric(
-        f"Raio do {nome_vencedor}",
-        f"{raio_vencedor:.2f} R⊕"
+        f"Densidade da Terra",
+        f"{pp.DENSIDADE_DA_TERRA} g/cm³"
     )
 
 with col2:
     st.metric(
-        f"Densidade da Terra",
-        f"{pp.DENSIDADE_DA_TERRA} g/cm³"
+        f"Raio do {nome_vencedor}",
+        f"{raio_vencedor:.2f} R⊕"
     )
     st.metric(
         f"Densidade do {nome_vencedor}",
