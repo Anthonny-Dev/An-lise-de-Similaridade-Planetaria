@@ -192,9 +192,6 @@ with col2:
 
 st.divider()
 
-# ==========================
-# GRÁFICO PRINCIPAL
-# ==========================
 
 st.subheader("🌎 Raio × Densidade")
 
@@ -237,10 +234,6 @@ st.pyplot(fig, use_container_width=True)
 
 st.divider()
 
-# ==========================
-# SIDEBAR
-# ==========================
-
 st.sidebar.title("Filtros")
 
 distancia_maxima = st.sidebar.slider(
@@ -259,9 +252,7 @@ st.sidebar.metric(
     len(planetas_proximos)
 )
 
-# ==========================
-# TABELA PRINCIPAL
-# ==========================
+
 
 st.subheader("📡 Catálogo de Planetas Potencialmente Habitáveis")
 
@@ -299,9 +290,7 @@ else:
         "Nenhum planeta passou simultaneamente por todos os filtros."
     )
 
-# ==========================
-# ANÁLISES INDIVIDUAIS
-# ==========================
+
 
 st.divider()
 
@@ -355,9 +344,6 @@ with st.expander("Filtro Magnético"):
         use_container_width=True
     )
 
-# ==========================
-# RODAPÉ
-# ==========================
 
 st.divider()
 
